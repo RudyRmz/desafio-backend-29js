@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev Community</title>
+    <link rel="shortcut icon" href="/src/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+    <header class="header__container sticky-top">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container d-flex align-items-center">
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-primary d-block d-md-none d-lg-none" type="submit"
+                        style="border:none; ">
+                        <img src="/src/hamburger.svg" alt="">
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
+                            alt="Logo" width="50" height="40" class="d-inline-block align-text-top" >
+                    </a>
+                    <div class="search__container d-none d-lg-block d-md-block" style="width: 420px;">
+                        <form class="d-flex position-relative" id="search__bar">
+                            <input class="form-control me-2" type="text" placeholder="Search..." aria-label="Search"
+                                id="data-search">
+                            <button class="btn btn-outline-primary position-relative" type="button"
+                                style="border:none; right: 55px;" id="search__button">
+                                <img src="/src/search.svg" alt="">
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-primary d-block d-md-none d-lg-none" type="submit"
+                        style="border:none" id="search__button">
+                        <img src="/src/search.svg" alt="">
+                    </button>
+                    <form class="container-fluid justify-content-start d-none d-md-block d-lg-block" ">
+                        <button type="button" class="btn btn-outline-primary"id="login__button">Log in</button>
+                        <button type="button" class="btn btn-outline-primary d-none"id="create_post__button">Create Post</button>
+                    </form>
+                    <img src="/src/notification.svg" alt="" class="me-2 d-none" style="width:25px; height:25px;" id="notificationIcon">
+
+                    <div class="btn-group d-none" id="button_dropdown">
+                        <button type="button" class="" style="border: none;" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img style="width: 35px; height: 35px; border-radius: 100%; border-color:black; border:1px solid;"
+                            src="/src/avatar-rudy.webp"
+                            alt="">
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><button class="dropdown-item" type="button">Rudy Ramírez <br> @rudyramirez</button></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><button class="dropdown-item" type="button">Create Post</button></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><button class="dropdown-item" type="button" id="signOutButton">Sign Out</button></li>
+                        </ul>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-2">
+        <div class="row">
+            <aside class="aside-menu__container container d-none col-md-3 col-lg-3 d-md-block ps-4">
+                <section class="login__container mt-3">
+                    <!-- card abajo -->
+                    <div class="card first-icons__container" style="height: 32rem;">
+                        <ul class="list__item list-group" style="background-color: #ebebeb;">
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <img src="/src/home.svg" alt="">
+                                <span>Home</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <img src="/src/listings.svg" alt="">
+                                <span>listings</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <img src="/src/podcasts.svg" alt="">
+                                <span>Podcasts</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <img src="/src/videos.svg" alt="" style="height: 1.6rem;">
+                                <span>Videos</span>
+                            </li>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <img src="/src/tags.svg" alt="">
+                                <span>Tags</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <img src="/src/faq.svg" alt="">
+                                <span>FAQ</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <img src="/src/forem-shop.svg" alt="">
+                                <span>Forem Shop</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <img src="/src/advertise-on-dev.svg" alt="">
+                                <span>Advertise on DEV</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <img src="/src/about.svg" alt="">
+                                <span>About</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <img src="/src/contact.svg" alt="">
+                                <span>Contact</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <img src="/src/guides.svg" alt="">
+                                <span>Guides</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <img src="/src/software-comparisons.svg" alt="">
+                                <span>Software comparisons</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card second-icons__container" style="height: 10.65rem;">
+                        <ul class="list__item list-group">
+
+                            <li class="list-group-item titles__items" style="height: 2.66rem;">
+                                <strong class="m-s-3 d-flex align-items-center" style="height: 2.66rem;">
+                                    Other
+                                </strong>
+
+                            </li>
+
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <img src="/src/code-of-conduct.svg" alt="">
+                                <span>Code of Conduct</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <img src="/src/privacy-policy.svg" alt="">
+                                <span>Privacy Policy</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <img src="/src/terms-of-use.svg" alt="">
+                                <span>Terms of use</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="icons__container d-flex justify-content-between" style="height: 2.5rem;">
+                        <img src="/src/twitter.svg" alt="" style="width: 2rem;">
+                        <img src="/src/facebook.svg" alt="" style="width: 2rem;">
+                        <img src="/src/github.svg" alt="" style="width: 2rem;">
+                        <img src="/src/instagram.svg" alt="" style="width: 2rem;">
+                        <img src="/src/twitch.svg" alt="" style="width: 2rem;">
+                        <img src="/src/foostodon.svg" alt="" style="width: 2rem;">
+
+
+                    </div>
+
+
+                    <div class="background__item">
+
+                        <strong>Popular Tags</strong>
+                    </div>
+
+
+                    <div class="overflow-auto card fourth-icons__container" style="height: 20rem;">
+
+
+
+                        <ul class="list__item list-group">
+
+                            </li>
+
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#webdev</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#javascrypt</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#beginners</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#programming</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#tutorial</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#react</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#python</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#productivity</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#devops</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#discuss</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#career</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#opensource</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#typescript</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#css</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#aws</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#node</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#codenewbie</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#api</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#testing</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#security</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#news</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#android</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#database</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#html</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#ai</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#github</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#java</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#learning</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#php</span>
+                            </li>
+                            <li class="list-group-item" style="height: 2.66rem;">
+                                <span>#cloud</span>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+
+                    <div class="card underline__text bg-light">
+                        <div class="card-body">
+                            <p class="d-flex">
+                                DEV community
+
+                            </p>
+
+
+                            <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--GkDXbK0b--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oky7tpxe4z0f8ksng5ta.png"
+                                alt="Dark Mode" width="100%" loading="lazy" class="dark-image__container">
+                            <p class="card-title">
+                                Life is too short to browse without <span>dark mode</span>.
+                            </p>
+                            <p class="card__text">
+                                You can customize your theme, font, and more <span>when you are signed in.</span>
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="card underline__text bg-light">
+                        <div class="card-body">
+                            <p class="d-flex flex-row">
+                                DEV community
+                            </p>
+
+                            <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--LqgADxKo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jb3sc2966d2rvbcohxvq.png"
+                                alt="Image description" width="100%" loading="lazy" class="koala__container">
+                            <p class="card__text">
+                                <span>Create an account on DEV</span>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card footer__text tags__item">
+                        <div class="card-body">
+
+                            <p class="card-footer__text">
+                                <span>DEV community</span> A constructive and inclusive social network for software
+                                developers. With you every step of your journey.
+                            </p>
+                            <p class="card-footer__text">
+                                Built on<span>Forem</span> — the <span>open source</span> software that powers
+                                <span>DEV</span> and other inclusive communities.
+                            </p>
+                            <p class="card-footer__text">
+                                Made with love and <span>Ruby on Rails</span> DEV Community © 2016 - 2023.
+                            </p>
+                        </div>
+                    </div>
+
+
+                </section>
+            </aside>
+            <main class="main-principal__container col-12 col-md-9 col-lg-6  ps-2 pe-2">
+                <ul class="tabs__container nav nav-underline d-flex align-items-center mt-1">
+                    <li class="item__tab nav-item ms-2">
+                        <a class="nav-link active" aria-current="page" href="/index.html" id="relevantButton">Relevant</a>
+                    </li>
+                    <li class="item__tab nav-item">
+                        <a class="item__link nav-link" style="cursor: pointer;" id="latestButton">Latest</a>
+                    </li>
+                    <li class="item__tab nav-item">
+                        <a class="item__link nav-link" style="cursor: pointer;" id="topButton">Top</a>
+                    </li>
+                </ul>
+                <section id="section_cards" class="cards__container">
+                    <div id="post_container" class="card">
+                        <!-- <img id="post_image" src="/src/post-1.png" class="card-img-top" alt="..." />
+                        <div id="div_body" class="card-body">
+                            <div id="div_autor" class="autor__container d-flex d-row align-items-center ms-1">
+                                <img id="autor_image" src="/src/autor-post-1.webp" alt="" class="autor__pic" />
+                                <div id="autor_info" class="autor-info__container d-flex flex-column ms-2">
+                                    <span class="autor__label">chantastic</span>
+                                    <span class="date__label">Jul 25</span>
+                                </div>
+                            </div>
+                            <a id="title_post" href="./view_post/post.html"
+                                class="card-title__link link-underline-light text-dark">
+                                <h3 class="card-title card-title-lg mt-3 ms-md-5 ms-lg-5 d-none d-md-block d-lg-block">
+                                    Fix VS Code Explorer for Content Projects
+                                </h3>
+                                <span
+                                    class="card-title card-title-sm mt-3 ms-md-5 ms-lg-5 d-sm-block d-md-none d-lg-none">Fix
+                                    VS Code Explorer for Content Projects</span>
+                            </a>
+                            <ul id="tags_list" class="tags__container list-unstyled d-flex flex-wrap ms-md-5 ms-lg-5">
+                                <li class="p-1">#vscode</li>
+                                <li class="ms-3">#coding</li>
+                                <li class="ms-3">#productivity</li>
+                                <li class="ms-3">#webdev</li>
+                            </ul>
+                            <div id="info_container"
+                                class="info__container d-flex justify-content-between align-items-center ms-md-5 ms-lg-5">
+                                <div id="detail_container" class="detail__container d-flex align-items-center">
+                                    <a id="reaction_link" href=""
+                                        class="reactions__link link-underline-light d-flex align-items-center">
+                                        <div class="reactions-pic__container reaction__pic--back position-relative">
+                                            <img src="/src/heart.svg" alt="" class="reaction__pic" />
+                                        </div>
+                                        <div class="reactions-pic__container reaction__pic--back position-relative">
+                                            <img src="/src/unicorn.svg" alt="" class="reaction__pic" />
+                                        </div>
+                                        <div class="reactions-pic__container reaction__pic--back position-relative">
+                                            <img src="/src/exploding-head.svg" alt="" class="reaction__pic" />
+                                        </div>
+                                        <div class="reactions-pic__container reaction__pic--back position-relative">
+                                            <img src="/src/raised-hands.svg" alt="" class="reaction__pic" />
+                                        </div>
+                                        <div class="reactions-pic__container reaction__pic--back position-relative">
+                                            <img src="/src/fire.svg" alt="" class="reaction__pic" />
+                                        </div>
+                                        <span
+                                            class="reactions__label text-primary-emphasis d-none d-md-inline d-lg-inline">5
+                                            Reactions</span>
+                                    </a>
+                                    <a href=""
+                                        class="comments__link link-underline-light d-flex align-items-center ms-4">
+                                        <img src="/src/comments.svg" alt="" class="comments__pic" />
+                                        <span class="number-comments__label text-primary-emphasis">2</span>
+                                        <span
+                                            class="comments__label text-primary-emphasis d-none d-md-inline d-lg-inline">Comments</span>
+                                    </a>
+                                </div>
+                                <div class="time__container">
+                                    <span class="min-read__container me-2">2 min read</span>
+                                    <img src="/src/bookmark.svg" alt="" class="bookmark__pic" />
+                                </div>
+                            </div>
+                            <div class="deleteButton__container">
+                                <button type="button" class="btn btn-outline-danger" id="delete__button">Delete
+                                    Post</button>
+                            </div>
+                        </div> -->
+                    </div>
+                    <!-- <div class="card mt-2">
+                        <div class="card-body">
+                            <div class="autor__container d-flex d-row align-items-center ms-1">
+                                <div class="post-img__container">
+                                    <img src="/src/post-2.webp" alt="" class="autor__pic" />
+                                    <img src="/src/autor-post-2.jpg" alt="" class="autor__photo position-absolute" />
+                                </div>
+                                <div class="autor-info__container d-flex flex-column ms-2">
+                                    <div class="autor-name__container">
+                                        <span class="autor__label">Nick Tchayka</span><span> for </span><span
+                                            class="autor__label">The Agile Monkeys</span>
+                                    </div>
+                                    <span class="date__label">Jul 25</span>
+                                </div>
+                            </div>
+                            <h3 class="card-title card-subtitle-lg mt-3 ms-md-5 ms-lg-5 d-none d-md-block d-lg-block">
+                                Baby's First Contribution - A GitHub Flow for non-devs
+                            </h3>
+                            <span
+                                class="card-title card-title-sm mt-3 ms-md-5 ms-lg-5 d-sm-block d-md-none d-lg-none">Baby's
+                                First Contribution - A GitHub Flow for non-devs</span>
+                            <ul class="tags__container list-unstyled d-flex flex-wrap ms-md-5 ms-lg-5">
+                                <li>#beginners</li>
+                                <li class="ms-3">#github</li>
+                                <li class="ms-3">#opensource</li>
+                                <li class="ms-3">#vscode</li>
+                            </ul>
+                            <div
+                                class="info__container d-flex justify-content-between align-items-center ms-md-5 ms-lg-5">
+                                <div class="detail__container d-flex align-items-center">
+                                    <a href="" class="reactions__link link-underline-light d-flex align-items-center">
+                                        <div class="reactions-pic__container z-3">
+                                            <img src="/src/heart.svg" alt="" class="reaction__pic" />
+                                        </div>
+                                        <span
+                                            class="reactions__label text-primary-emphasis d-none d-md-inline d-lg-inline">2
+                                            Reactions</span>
+                                    </a>
+                                    <a href=""
+                                        class="comments__link link-underline-light d-flex align-items-center ms-5">
+                                        <img src="/src/comments.svg" alt="" class="comments__pic" />
+                                        <span class="number-comments__label text-primary-emphasis">1</span>
+                                        <span
+                                            class="comments__label text-primary-emphasis d-none d-md-inline d-lg-inline">Comments</span>
+                                    </a>
+                                </div>
+                                <div class="void__container"></div>
+                                <div class="time__container">
+                                    <span class="min-read__container me-2">6 min read</span>
+                                    <img src="/src/bookmark.svg" alt="" class="bookmark__pic" />
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="card mt-2">
+                        <div class="card-body">
+                            <div class="autor__container d-flex d-row align-items-center ms-1">
+                                <div class="post-img__container">
+                                    <img src="/src/rainbow.webp" alt="" class="autor__pic" />
+                                    <img src="/src/autor-post-3.webp" alt="" class="autor__photo position-absolute" />
+                                </div>
+                                <div class="autor-info__container d-flex flex-column ms-2">
+                                    <div class="autor-name__container">
+                                        <span class="autor__label">Michael Tharrington</span><span> for </span><span
+                                            class="autor__label">The DEV Team</span>
+                                    </div>
+                                    <span class="date__label">Aug 4 (4 days ago)</span>
+                                </div>
+                            </div>
+                            <h3 class="card-title card-subtitle-lg mt-3 ms-md-5 ms-lg-5 d-none d-md-block d-lg-block">
+                                What was your win this week?
+                            </h3>
+                            <span
+                                class="card-title card-title-sm mt-3 ms-md-5 ms-lg-5 d-sm-block d-md-none d-lg-none">What
+                                was your win this week?</span>
+                            <ul
+                                class="tags__container list-unstyled d-flex align-items-center flex-wrap ms-md-5 ms-lg-5">
+                                <li class="li__green p-1 rounded">
+                                    <span class="green__tag">#</span>discuss
+                                </li>
+                                <li class="ms-3">#weeklyretro</li>
+                            </ul>
+                            <div
+                                class="info__container d-flex justify-content-between align-items-center ms-md-5 ms-lg-5">
+                                <div class="detail__container d-flex align-items-center">
+                                    <a href="" class="reactions__link link-underline-light d-flex align-items-center">
+                                        <div class="reactions__container d-flex w-50">
+                                            <div class="reactions-pic__container z-3">
+                                                <img src="/src/heart.svg" alt="" class="reaction__pic" />
+                                            </div>
+                                            <div
+                                                class="reactions-pic__container reaction__pic--back position-relative z-2">
+                                                <img src="/src/unicorn.svg" alt="" class="reaction__pic" />
+                                            </div>
+                                            <div
+                                                class="reactions-pic__container reaction__pic--back-2 position-relative z-1">
+                                                <img src="/src/raised-hands.svg" alt="" class="reaction__pic" />
+                                            </div>
+                                            <div
+                                                class="reactions-pic__container reaction__pic--back-3 position-relative">
+                                                <img src="/src/fire.svg" alt="" class="reaction__pic" />
+                                            </div>
+                                        </div>
+                                        <span
+                                            class="reactions__label text-primary-emphasis d-none d-md-inline d-lg-inline">19
+                                            Reactions</span>
+                                    </a>
+                                    <a href=""
+                                        class="comments__link link-underline-light d-flex align-items-center ms-2">
+                                        <img src="/src/comments.svg" alt="" class="comments__pic" />
+                                        <span class="number-comments__label text-primary-emphasis">58</span>
+                                        <span
+                                            class="comments__label text-primary-emphasis d-none d-md-inline d-lg-inline">Comments</span>
+                                    </a>
+                                </div>
+                                <div class="void__container"></div>
+                                <div class="time__container">
+                                    <span class="min-read__container me-2">1 min read</span>
+                                    <img src="/src/bookmark.svg" alt="" class="bookmark__pic" />
+                                </div>
+                            </div>
+                            <div class="comments__container mt-3 ms-md-3 ms-lg-3">
+                                <div class="comment__container d-flex justify-content-between">
+                                    <img src="/src/autor-comment-1.webp" alt="" class="autor-comment__pic" />
+                                    <div class="comment-detail__container rounded p-3 ms-1 w-100">
+                                        <span class="text-dark-emphasis"><strong>Ayu Adiati</strong></span><span
+                                            class="text-dark-emphasis"> 4 days ago</span>
+                                        <p>My wins for this week:</p>
+                                        <ul class="ms-1">
+                                            <li>Got a Warm Welcome badge from DEV! 🥰</li>
+                                            <li>
+                                                Got interviewed & featured on
+                                                <a href="" class="link-underline-light">Polyworks's blog</a>
+                                                🎉.
+                                            </li>
+                                            <li>
+                                                Even though we'es still on vacation, I managed to make
+                                                half to an hour every morning for #100DaysOfOSS 🙌🏼.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="comment__container d-flex justify-content-between mt-3">
+                                    <img src="/src/autor-comment-1.webp" alt="" class="autor-comment__pic" />
+                                    <div class="comment-detail__container rounded p-3 ms-1 w-100">
+                                        <span class="text-dark-emphasis"><strong>Thomas Bnt</strong></span><span
+                                            class="text-dark-emphasis"> 5 days ago</span>
+                                        <p>Some good stuff like:</p>
+                                        <ul class="ms-1">
+                                            <li>
+                                                Started to create my new future design for personal
+                                                website 🌈
+                                            </li>
+                                            <li>
+                                                Got news screens, for better visibility on my desk and
+                                                for work
+                                            </li>
+                                            <li>Interviewed by DEV team 🌱💚</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="all-comments__container mt-4 ms-4 ms-md-5 ms-lg-5">
+                                <a href=""
+                                    class="all-comments__text text-dark-emphasis link-underline-light"><strong>See all
+                                        58 comments</strong></a>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="card mt-2">
+                        <div class="card-body">
+                            <div class="autor__container d-flex d-row align-items-center ms-1">
+                                <div class="post-img__container">
+                                    <img src="/src/autor-post-4.webp" alt="" class="autor__pic--circle" />
+                                </div>
+                                <div class="autor-info__container d-flex flex-column ms-2">
+                                    <div class="autor-name__container">
+                                        <span class="autor__label">Maaruf Dauda</span>
+                                    </div>
+                                    <span class="date__label">Jul 26</span>
+                                </div>
+                            </div>
+                            <h3 class="card-title card-subtitle-lg mt-3 ms-md-5 ms-lg-5 d-none d-md-block d-lg-block">
+                                Search and Replace Wizardry with back referencing and
+                                capturing groups
+                            </h3>
+                            <span
+                                class="card-title card-title-sm mt-3 ms-md-5 ms-lg-5 d-sm-block d-md-none d-lg-none">Search
+                                and Replace Wizardry with back referencing and
+                                capturing groups</span>
+                            <ul class="tags__container list-unstyled d-flex flex-wrap ms-md-5 ms-lg-5">
+                                <li>#code</li>
+                                <li class="ms-3">#regex</li>
+                                <li class="ms-3">#intellij</li>
+                                <li class="ms-3">#vscode</li>
+                            </ul>
+                            <div
+                                class="info__container d-flex justify-content-between align-items-center ms-md-5 ms-lg-5">
+                                <div class="detail__container d-flex align-items-center">
+                                    <a href="" class="reactions__link link-underline-light d-flex align-items-center">
+                                        <div class="reactions__container d-flex w-50">
+                                            <div class="reactions-pic__container reaction__pic--front">
+                                                <img src="/src/exploding-head.svg" alt="" class="reaction__pic" />
+                                            </div>
+                                            <div class="reactions-pic__container reaction__pic--back position-relative">
+                                                <img src="/src/heart.svg" alt="" class="reaction__pic" />
+                                            </div>
+                                            <div
+                                                class="reactions-pic__container reaction__pic--back-2 position-relative">
+                                                <img src="/src/unicorn.svg" alt="" class="reaction__pic" />
+                                            </div>
+                                            <div
+                                                class="reactions-pic__container reaction__pic--back-3 position-relative">
+                                                <img src="/src/raised-hands.svg" alt="" class="reaction__pic" />
+                                            </div>
+                                            <div
+                                                class="reactions-pic__container reaction__pic--back-4 position-relative">
+                                                <img src="/src/fire.svg" alt="" class="reaction__pic" />
+                                            </div>
+                                        </div>
+                                        <span
+                                            class="reactions__label text-primary-emphasis d-none d-md-inline d-lg-inline">10
+                                            Reactions</span>
+                                    </a>
+                                    <a href="" class="comments__link link-underline-light d-flex align-items-center">
+                                        <img src="/src/comments.svg" alt="" class="comments__pic" />
+                                        <span
+                                            class="number-comments__label text-primary-emphasis d-block d-md-none d-lg-none">0</span>
+                                        <span
+                                            class="comments__label text-primary-emphasis d-none d-md-inline d-lg-inline">Add
+                                            comment</span>
+                                    </a>
+                                </div>
+                                <div class="void__container"></div>
+                                <div class="time__container">
+                                    <span class="min-read__container me-2">4 min read</span>
+                                    <img src="/src/bookmark.svg" alt="" class="bookmark__pic" />
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="card mt-2">
+                        <div class="card-body">
+                            <div class="autor__container d-flex d-row align-items-center ms-1">
+                                <div class="post-img__container">
+                                    <img src="/src/autor-post-5.webp" alt="" class="autor__pic--circle" />
+                                </div>
+                                <div class="autor-info__container d-flex flex-column ms-2">
+                                    <div class="autor-name__container">
+                                        <span class="autor__label">Kittipat.po</span>
+                                    </div>
+                                    <span class="date__label">Jul 30</span>
+                                </div>
+                            </div>
+                            <h3 class="card-title card-subtitle-lg mt-3 ms-md-5 ms-lg-5 d-none d-md-block d-lg-block">
+                                Golang Debugging in Visual Studio Code
+                            </h3>
+                            <span
+                                class="card-title card-title-sm mt-3 ms-md-5 ms-lg-5 d-sm-block d-md-none d-lg-none">Golang
+                                Debugging in Visual Studio Code</span>
+                            <ul class="tags__container list-unstyled d-flex flex-wrap ms-md-5 ms-lg-5">
+                                <li>#goo</li>
+                                <li class="ms-3">#webdev</li>
+                                <li class="ms-3">#vscode</li>
+                                <li class="ms-3">#backend</li>
+                            </ul>
+                            <div
+                                class="info__container d-flex justify-content-between align-items-center ms-md-5 ms-lg-5">
+                                <div class="detail__container d-flex align-items-center">
+                                    <a href="" class="reactions__link link-underline-light d-flex align-items-center">
+                                        <div class="reactions-pic__container z-3">
+                                            <img src="/src/heart.svg" alt="" class="reaction__pic" />
+                                        </div>
+                                        <span
+                                            class="reactions__label text-primary-emphasis d-none d-md-inline d-lg-inline">6
+                                            Reactions</span>
+                                    </a>
+                                    <a href=""
+                                        class="comments__link link-underline-light d-flex align-items-center ms-5">
+                                        <img src="/src/comments.svg" alt="" class="comments__pic" />
+                                        <span class="number-comments__label text-primary-emphasis">1</span>
+                                        <span
+                                            class="comments__label text-primary-emphasis d-none d-md-inline d-lg-inline">Comment</span>
+                                    </a>
+                                </div>
+                                <div class="void__container"></div>
+                                <div class="time__container">
+                                    <span class="min-read__container me-2">4 min read</span>
+                                    <img src="/src/bookmark.svg" alt="" class="bookmark__pic" />
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="card mt-2">
+                        <div class="card-body">
+                            <div class="autor__container d-flex d-row align-items-center ms-1">
+                                <div class="post-img__container">
+                                    <img src="/src/rainbow.webp" alt="" class="autor__pic" />
+                                    <img src="/src/autor-post-3.webp" alt="" class="autor__photo position-absolute" />
+                                </div>
+                                <div class="autor-info__container d-flex flex-column ms-2">
+                                    <div class="autor-name__container">
+                                        <span class="autor__label">Sloan the DEV Moderator</span><span> for </span><span
+                                            class="autor__label">The DEV Team</span>
+                                    </div>
+                                    <span class="date__label">Aug 7 (1 day ago)</span>
+                                </div>
+                            </div>
+                            <h3 class="card-title card-subtitle-lg mt-3 ms-md-5 ms-lg-5 d-none d-md-block d-lg-block">
+                                Writing your first post on DEV ✍️
+                            </h3>
+                            <span
+                                class="card-title card-title-sm mt-3 ms-md-5 ms-lg-5 d-sm-block d-md-none d-lg-none">Writing
+                                your first post on DEV ✍️</span>
+                            <ul class="tags__container list-unstyled d-flex flex-wrap ms-md-5 ms-lg-5">
+                                <li>#tutorial</li>
+                                <li class="ms-3">#meta</li>
+                                <li class="ms-3">#writing</li>
+                            </ul>
+                            <div
+                                class="info__container d-flex justify-content-between align-items-center ms-md-5 ms-lg-5">
+                                <div class="detail__container d-flex align-items-center">
+                                    <a href=""
+                                        class="reactions__link link-underline-light d-flex align-items-center jus">
+                                        <div class="reactions__container d-flex w-50">
+                                            <div class="reactions-pic__container z-3">
+                                                <img src="/src/heart.svg" alt="" class="reaction__pic" />
+                                            </div>
+                                            <div
+                                                class="reactions-pic__container reaction__pic--back position-relative z-2">
+                                                <img src="/src/unicorn.svg" alt="" class="reaction__pic" />
+                                            </div>
+                                            <div
+                                                class="reactions-pic__container reaction__pic--back-2 position-relative z-1">
+                                                <img src="/src/raised-hands.svg" alt="" class="reaction__pic" />
+                                            </div>
+                                            <div
+                                                class="reactions-pic__container reaction__pic--back-3 position-relative">
+                                                <img src="/src/fire.svg" alt="" class="reaction__pic" />
+                                            </div>
+                                        </div>
+                                        <span
+                                            class="reactions__label text-primary-emphasis d-none d-md-inline d-lg-inline">26
+                                            Reactions</span>
+                                    </a>
+                                    <a href="" class="comments__link link-underline-light d-flex align-items-center">
+                                        <img src="/src/comments.svg" alt="" class="comments__pic" />
+                                        <span class="number-comments__label text-primary-emphasis">5</span>
+                                        <span
+                                            class="comments__label text-primary-emphasis d-none d-md-inline d-lg-inline">Comments</span>
+                                    </a>
+                                </div>
+                                <div class="void__container"></div>
+                                <div class="time__container">
+                                    <span class="min-read__container me-2">4 min read</span>
+                                    <img src="/src/bookmark.svg" alt="" class="bookmark__pic" />
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="card mt-2">
+                        <div class="card-body">
+                            <div class="autor__container d-flex d-row align-items-center ms-1">
+                                <div class="post-img__container">
+                                    <img src="/src/autor-post-6.jpeg" alt="" class="autor__pic--circle" />
+                                </div>
+                                <div class="autor-info__container d-flex flex-column ms-2">
+                                    <div class="autor-name__container">
+                                        <span class="autor__label">Bobby Iliev</span>
+                                    </div>
+                                    <span class="date__label">Aug 2</span>
+                                </div>
+                            </div>
+                            <h3 class="card-title card-subtitle-lg mt-3 ms-md-5 ms-lg-5 d-none d-md-block d-lg-block">
+                                7 Best VS Code Extensions for Python Developers
+                            </h3>
+                            <span class="card-title card-title-sm mt-3 ms-md-5 ms-lg-5 d-sm-block d-md-none d-lg-none">7
+                                Best VS Code Extensions for Python Developers</span>
+                            <ul
+                                class="tags__container list-unstyled d-flex align-items-center flex-wrap ms-md-5 ms-lg-5">
+                                <li>#python</li>
+                                <li class="ms-3">#vscode</li>
+                                <li class="ms-3">#beginners</li>
+                                <li class="ms-3">#webdev</li>
+                            </ul>
+                            <div
+                                class="info__container d-flex justify-content-between align-items-center ms-md-5 ms-lg-5">
+                                <div class="detail__container d-flex align-items-center">
+                                    <a href=""
+                                        class="reactions__link link-underline-light d-flex align-items-center justify-content-start">
+                                        <div class="reactions__container d-flex w-50">
+                                            <div class="reactions-pic__container reaction__pic--front">
+                                                <img src="/src/exploding-head.svg" alt="" class="reaction__pic" />
+                                            </div>
+                                            <div class="reactions-pic__container reaction__pic--back position-relative">
+                                                <img src="/src/heart.svg" alt="" class="reaction__pic" />
+                                            </div>
+                                            <div
+                                                class="reactions-pic__container reaction__pic--back-2 position-relative">
+                                                <img src="/src/unicorn.svg" alt="" class="reaction__pic" />
+                                            </div>
+                                            <div
+                                                class="reactions-pic__container reaction__pic--back-3 position-relative">
+                                                <img src="/src/raised-hands.svg" alt="" class="reaction__pic" />
+                                            </div>
+                                            <div
+                                                class="reactions-pic__container reaction__pic--back-4 position-relative">
+                                                <img src="/src/fire.svg" alt="" class="reaction__pic" />
+                                            </div>
+                                        </div>
+                                        <span
+                                            class="reactions__label text-primary-emphasis d-none d-md-inline d-lg-inline">25
+                                            Reactions</span>
+                                    </a>
+                                    <a href=""
+                                        class="comments__link link-underline-light d-flex align-items-center ms-2">
+                                        <img src="/src/comments.svg" alt="" class="comments__pic" />
+                                        <span class="number-comments__label text-primary-emphasis">6</span>
+                                        <span
+                                            class="comments__label text-primary-emphasis d-none d-md-inline d-lg-inline">Comments</span>
+                                    </a>
+                                </div>
+                                <div class="void__container"></div>
+                                <div class="time__container">
+                                    <span class="min-read__container me-2">3 min read</span>
+                                    <img src="/src/bookmark.svg" alt="" class="bookmark__pic" />
+                                </div>
+                            </div>
+                            <div class="comments__container mt-3 ms-md-3 ms-lg-3">
+                                <div class="comment__container d-flex">
+                                    <img src="/src/autor-comment-2.webp" alt="" class="autor-comment__pic" />
+                                    <div class="comment-detail__container rounded p-3 ms-1 w-100">
+                                        <span class="text-dark-emphasis"><strong>Ayyoub-ESSADEQ</strong></span><span
+                                            class="text-dark-emphasis"> 4 days ago</span>
+                                        <p>You must check Cocaptain vscode extension.</p>
+                                    </div>
+                                </div>
+                                <div class="comment__container d-flex mt-3">
+                                    <img src="/src/autor-comment-3.jpg" alt="" class="autor-comment__pic" />
+                                    <div class="comment-detail__container rounded p-3 ms-1 w-100">
+                                        <span class="text-dark-emphasis"><strong>Jay Codes</strong></span><span
+                                            class="text-dark-emphasis"> 5 days ago</span>
+                                        <p>This was helpful Bobby🙌</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="all-comments__container mt-4 ms-4 ms-md-5 ms-lg-5">
+                                <a href=""
+                                    class="all-comments__text text-dark-emphasis link-underline-light"><strong>See all 6
+                                        comments</strong></a>
+                            </div>
+                        </div>
+                    </div> -->
+                </section>
+            </main>
+            <aside class="aside-right-principal__container d-none col-lg-3 d-lg-block mt-2">
+                <section>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header d-flex justify-content-between">
+                            <h5>Listings</h5>
+                            <span class="color__blue">See all</span>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a class="link-underline-light text-dark" href="">Supercharge
+                                    your application's performance: Consuming Symfony messenger messager with Go</a>
+                                <p>products</p>
+                            </li>
+                            <li class="list-group-item"><a class="link-underline-light text-dark" href="">🚀 Maximizing
+                                    your IT system's potential: how to identify and resolve host performance and
+                                    configuration issues</a>
+                                <p>education</p>
+                            </li>
+                            <li class="list-group-item"><a class="link-underline-light text-dark" href="">Contenda
+                                    Studio: Stretch your content futher</a>
+                                <p>products</p>
+                            </li>
+                            <li class="list-group-item"><a class="link-underline-light text-dark" href="">Lessons
+                                    Learned from a Developer Incorporating AI</a>
+                                <p>mentors</p>
+                            </li>
+                            <li class="list-group-item"><a class="link-underline-light text-dark" href="">DevOps with
+                                    AWS Champion, Heather Luna</a>
+                                <p>mentors</p>
+                            </li>
+                            <span class="list-group-item d-flex justify-content-center">Create a Listing</span>
+                        </ul>
+                    </div>
+                </section>
+                <section class="margin__card">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header d-flex justify-content-between">
+                            <h5>#discuss</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a class="link-underline-light text-dark" href="">Finding Your
+                                    Coding Habitat: Where Do You Thrive Best?</a><span
+                                    class="color__gold"><br>New</span></li>
+                            <li class="list-group-item"><a class="link-underline-light text-dark" href="">Music
+                                    Mondey—What are you listening to? (Chill Edition II)</a>
+                                <p>23 comments</p>
+                            </li>
+                            <li class="list-group-item"><a class="link-underline-light text-dark" href="">Embarking on a
+                                    journey: Joining the Dev Community</a>
+                                <p>1 comment</p>
+                            </li>
+                            <li class="list-group-item"><a class="link-underline-light text-dark" href="">What are
+                                    Challengers do you face in Writing Technical Articles?</a>
+                                <p>3 comments</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header d-flex justify-content-between">
+                            <h5>#watercooler</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a class="link-underline-light text-dark" href="">Music
+                                    Mondey—What are you listening to? (Chill Edition II)</a>
+                                <p>23 comments</p>
+                            </li>
+                            <li class="list-group-item"><a class="link-underline-light text-dark" href="">Meme
+                                    Monday</a>
+                                <p>53 comments</p>
+                            </li>
+                            <li class="list-group-item"><a class="link-underline-light text-dark" href="">Caption
+                                    This!🤔💭</a>
+                                <p>1 comment</p>
+                            </li>
+                            <li class="list-group-item"><a class="link-underline-light text-dark" href="">Rubyist
+                                    Hangout Thread</a>
+                                <p>1 comments</p>
+                            </li>
+                            <li class="list-group-item"><a class="link-underline-light text-dark" href="">Which Tech
+                                    Trends Missed the Mark</a>
+                                <p>4 comments</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+    <script src="/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

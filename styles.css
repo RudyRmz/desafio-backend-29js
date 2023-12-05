@@ -1,0 +1,383 @@
+/*.container {
+    margin: 0;
+    padding: 0;
+}*/
+body {
+  background-color: rgb(245, 245, 245);
+}
+
+.aside-menu__container .first-icons__container, .aside-menu__container .second-icons__container, .aside-menu__container .third-icons__container, .aside-menu__container .fourth-icons__container {
+  border: none;
+}
+.aside-menu__container .btn-first__button {
+  color: blue;
+  margin-bottom: 5px;
+}
+.aside-menu__container .btn-first__button:hover {
+  background-color: blue;
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+.aside-menu__container .btn-second__button:hover {
+  background-color: rgb(212, 229, 255);
+  color: rgb(23, 23, 204);
+  text-decoration: underline;
+  text-decoration-color: rgb(0, 0, 94);
+}
+.aside-menu__container .card {
+  margin-bottom: 25px;
+}
+.aside-menu__container .list-group-item, .aside-menu__container .tags__item {
+  border: none;
+  background-color: rgb(245, 245, 245);
+}
+.aside-menu__container .list-group-item:hover {
+  background-color: rgb(212, 229, 255);
+  color: rgb(23, 23, 204);
+  text-decoration: underline;
+  text-decoration-color: rgb(0, 0, 94);
+  cursor: pointer;
+}
+.aside-menu__container .titles__items:hover {
+  background-color: rgb(245, 245, 245);
+  color: black;
+  text-decoration: none;
+  cursor: default;
+}
+.aside-menu__container .underline__text .card-title {
+  font-size: 23px;
+  font-weight: bold;
+}
+.aside-menu__container .underline__text .card-title span {
+  font-size: 23px;
+  font-weight: bold;
+  color: blue;
+  text-decoration: underline;
+  text-decoration-color: blue;
+}
+.aside-menu__container .underline__text .card-title :hover {
+  cursor: pointer;
+}
+.aside-menu__container .underline__text .card__text {
+  font-size: 16px;
+}
+.aside-menu__container .underline__text .card__text span {
+  font-size: 16px;
+  color: blue;
+  text-decoration: underline;
+  text-decoration-color: blue;
+}
+.aside-menu__container .underline__text .card__text :hover {
+  cursor: pointer;
+}
+.aside-menu__container .underline__text .koala__container:hover {
+  cursor: pointer;
+}
+.aside-menu__container .underline__text img {
+  margin-bottom: 20px;
+}
+.aside-menu__container .background__item {
+  background-color: rgb(245, 245, 245);
+  border: none;
+}
+.aside-menu__container .footer__text .card-footer__text {
+  font-size: 13px;
+  font-weight: lighter;
+}
+.aside-menu__container .footer__text .card-footer__text span {
+  font-size: 12.5px;
+  font-weight: bold;
+  color: blue;
+}
+.aside-menu__container .footer__text .card-footer__text span:hover {
+  cursor: pointer;
+}
+.aside-menu__container .icons__container {
+  margin-bottom: 25px;
+  background-color: rgb(245, 245, 245);
+}
+.aside-menu__container .icons__container img:hover {
+  background-color: rgb(212, 229, 255);
+  color: rgb(23, 23, 204);
+  text-decoration: underline;
+  text-decoration-color: rgb(0, 0, 94);
+  cursor: pointer;
+}
+
+.main-principal__container .nav-underline {
+  --bs-nav-underline-border-width: 0;
+}
+.main-principal__container .tabs__container {
+  height: 60px;
+}
+.main-principal__container .tabs__container * {
+  font-size: 1.125rem;
+}
+.main-principal__container .tabs__container .item__tab {
+  padding: 0.25rem;
+  border-radius: 8px;
+  color: #000;
+}
+.main-principal__container .tabs__container .item__tab a:hover {
+  color: rgb(59, 73, 223);
+}
+.main-principal__container .tabs__container .item__tab .item__link {
+  color: #000;
+}
+.main-principal__container .tabs__container .item__tab:hover {
+  background-color: #fff;
+}
+.main-principal__container .cards__container .card {
+  padding-bottom: 10px;
+}
+.main-principal__container .cards__container .card .card-body .autor__container .autor__pic {
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+  right: 15px;
+  top: 15px;
+}
+.main-principal__container .cards__container .card .card-body .autor__container .post-img__container .autor__pic {
+  border-radius: 0%;
+  width: 32px;
+  height: 32px;
+}
+.main-principal__container .cards__container .card .card-body .autor__container .post-img__container .autor__pic--circle {
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+}
+.main-principal__container .cards__container .card .card-body .autor__container .post-img__container .autor__photo {
+  border-radius: 100%;
+  border-style: solid;
+  border-color: #fff;
+  width: 24px;
+  height: 24px;
+  left: 35px;
+  top: 38px;
+}
+.main-principal__container .cards__container .card .card-body .autor__container .autor-info__container .autor__label {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: rgb(64, 64, 64);
+  font-family: "Segoe UI", "Roboto", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  padding: 0.25rem;
+  border-radius: 8px;
+}
+.main-principal__container .cards__container .card .card-body .autor__container .autor-info__container .autor__label:hover {
+  background-color: #f3f3f3;
+}
+.main-principal__container .cards__container .card .card-body .autor__container .autor-info__container .date__label {
+  font-size: 0.75rem;
+  color: rgb(82, 82, 82);
+}
+.main-principal__container .cards__container .card .card-body .card-title-lg {
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-family: "Segoe UI", "Roboto", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.main-principal__container .cards__container .card .card-body .card-title-lg:hover {
+  color: rgb(59, 73, 223);
+}
+.main-principal__container .cards__container .card .card-body .card-subtitle-lg {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Segoe UI", "Roboto", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.main-principal__container .cards__container .card .card-body .card-subtitle-lg:hover {
+  color: rgb(59, 73, 223);
+  cursor: pointer;
+}
+.main-principal__container .cards__container .card .card-body .card-title-sm {
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: "Segoe UI", "Roboto", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.main-principal__container .cards__container .card .card-body .card-title-sm:hover {
+  color: rgb(59, 73, 223);
+  cursor: pointer;
+}
+.main-principal__container .cards__container .card .card-body .tags__container .li__green {
+  background-color: rgba(26, 214, 67, 0.1019607843);
+}
+.main-principal__container .cards__container .card .card-body .tags__container .li__green .green__tag {
+  color: #1ad643;
+}
+.main-principal__container .cards__container .card .card-body .tags__container .li__green:hover {
+  border-color: #1ad643;
+  background-color: rgba(26, 214, 67, 0.1019607843);
+}
+.main-principal__container .cards__container .card .card-body .tags__container li {
+  font-size: 0.875rem;
+  padding: 0.25rem;
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: #fff;
+}
+.main-principal__container .cards__container .card .card-body .tags__container li:hover {
+  background-color: #f3f3f3;
+  border: 1px solid;
+  border-color: #b4afaf;
+}
+.main-principal__container .cards__container .card .info__container .detail__container .reactions__link {
+  padding: 0.25rem;
+  border-radius: 8px;
+}
+.main-principal__container .cards__container .card .info__container .detail__container .reactions__link .reactions-pic__container {
+  border-radius: 100%;
+  background-color: rgb(245, 245, 245);
+  border: 2px solid rgb(245, 245, 245);
+  width: 28px;
+  height: 28px;
+}
+.main-principal__container .cards__container .card .info__container .detail__container .reactions__link .reaction__pic--front {
+  z-index: 5;
+}
+.main-principal__container .cards__container .card .info__container .detail__container .reactions__link .reaction__pic--back {
+  z-index: 4;
+  right: 10px;
+}
+.main-principal__container .cards__container .card .info__container .detail__container .reactions__link .reaction__pic--back-2 {
+  z-index: 3;
+  right: 20px;
+}
+.main-principal__container .cards__container .card .info__container .detail__container .reactions__link .reaction__pic--back-3 {
+  z-index: 2;
+  right: 30px;
+}
+.main-principal__container .cards__container .card .info__container .detail__container .reactions__link .reaction__pic--back-4 {
+  z-index: 1;
+  right: 40px;
+}
+.main-principal__container .cards__container .card .info__container .detail__container .reactions__link .reactions__label {
+  font-size: 0.875rem;
+}
+.main-principal__container .cards__container .card .info__container .detail__container .reactions__link:hover {
+  background-color: #f3f3f3;
+}
+.main-principal__container .cards__container .card .info__container .detail__container .comments__link {
+  font-size: 0.875rem;
+  padding: 0.25rem;
+  border-radius: 8px;
+}
+.main-principal__container .cards__container .card .info__container .detail__container .comments__link:hover {
+  background-color: #f3f3f3;
+}
+.main-principal__container .cards__container .card .info__container .time__container .min-read__container {
+  font-size: 0.75rem;
+}
+.main-principal__container .cards__container .card .info__container .time__container .bookmark__pic {
+  padding: 0.25rem;
+  border-radius: 5px;
+}
+.main-principal__container .cards__container .card .info__container .time__container .bookmark__pic:hover {
+  background-color: rgba(59, 73, 223, 0.1);
+}
+.main-principal__container .cards__container .card .comments__container .comment__container .autor-comment__pic {
+  border-radius: 100%;
+  width: 24px;
+  height: 24px;
+}
+.main-principal__container .cards__container .card .comments__container .comment__container .comment-detail__container {
+  background-color: rgb(245, 245, 245);
+}
+.main-principal__container .cards__container .card .comments__container .comment__container .comment-detail__container * {
+  font-size: 0.875rem;
+}
+.main-principal__container .cards__container .card .all-comments__container .all-comments__text {
+  font-size: 0.875rem;
+}
+.main-principal__container .cards__container .deleteButton__container {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.main-principal__container .cards__container #delete__button {
+  margin-top: 10px;
+}
+.main-principal__container .cards__container:hover {
+  cursor: pointer;
+}
+
+.aside-right-principal__container .color__blue {
+  color: blue;
+  font-weight: 500;
+}
+.aside-right-principal__container span {
+  font-weight: 500;
+}
+.aside-right-principal__container p {
+  font-size: 13px;
+}
+.aside-right-principal__container a:hover {
+  color: blue;
+}
+.aside-right-principal__container .color__gold {
+  background-color: goldenrod;
+  font-size: 13px;
+}
+.aside-right-principal__container .margin__card {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.aside-left-post__container .icon__color .icon-heart:hover {
+  color: red;
+}
+.aside-left-post__container .icon__color .icon-message:hover {
+  color: yellow;
+}
+.aside-left-post__container .icon__color .icon-mark:hover {
+  color: hotpink;
+}
+
+.main-post__container .more__info .row:hover .fs-4,
+.main-post__container .more__info .row:hover .opacity-75 {
+  color: rgb(59, 73, 223);
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .main-post__container .main-post__container {
+    margin-left: 5rem;
+  }
+}
+
+.aside-right-post__container .card__anuncio {
+  position: sticky;
+  top: 20px;
+  z-index: 100;
+}
+@media (max-width: 769px) {
+  .aside-right-post__container .aside-right-post__container {
+    margin-left: 0rem;
+  }
+}
+@media (max-width: 768px) {
+  .aside-right-post__container .aside-right-post__container {
+    margin-left: 5rem;
+  }
+}
+@media (max-width: 320px) {
+  .aside-right-post__container .aside-right-post__container {
+    margin-left: 0rem;
+  }
+}
+
+.footer__container .no__point {
+  list-style: none;
+}
+.footer__container span, .footer__container li {
+  color: blue;
+}
+
+.button-edit-color {
+  background-color: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.1);
+  border-radius: 0.375rem;
+  padding: 12px 15px;
+  font-size: 12px;
+}
+
+.button-edit-color:hover {
+  background-color: rgba(244, 50, 6, 0.1);
+}/*# sourceMappingURL=styles.css.map */

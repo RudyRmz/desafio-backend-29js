@@ -1,0 +1,491 @@
+@import "vars";
+
+/*.container {
+    margin: 0;
+    padding: 0;
+}*/
+
+
+body {
+    background-color: rgb(245, 245, 245);
+}
+
+
+
+.aside-menu__container {
+
+    .first-icons__container, .second-icons__container, .third-icons__container, .fourth-icons__container {
+         border: none;
+    }
+
+   .btn-first__button {
+       color: blue;
+       margin-bottom: 5px;
+   }
+
+  .btn-first__button:hover {
+       background-color: blue;
+       color: white;
+       text-decoration: underline;
+       text-decoration-color: white;
+  }
+
+  .btn-second__button:hover {
+       background-color: rgb(212, 229, 255);
+       color: rgb(23, 23, 204);
+       text-decoration: underline;
+       text-decoration-color: rgb(0, 0, 94);
+  }
+
+
+  .card {
+    margin-bottom: 25px;
+  }
+
+
+  .list-group-item, .tags__item {
+       border: none;
+       background-color: rgb(245, 245, 245);
+
+  }
+
+  .list-group-item:hover {
+    background-color: rgb(212, 229, 255);
+    color: rgb(23, 23, 204);
+    text-decoration: underline;
+    text-decoration-color: rgb(0, 0, 94);
+    cursor: pointer;
+ 
+    }
+
+    .titles__items:hover {
+         background-color: rgb(245, 245, 245);
+         color: black;
+         text-decoration: none;
+         cursor: default;
+       }
+
+    .underline__text {
+         .card-title {
+              font-size: 23px;
+              font-weight: bold;
+
+              span {
+                   font-size: 23px;
+                   font-weight: bold;
+                   color: blue;
+                   text-decoration: underline;
+                   text-decoration-color: blue;
+              }    
+              :hover {
+                   cursor: pointer;
+              }
+
+         }
+
+         .card__text {
+              font-size: 16px;
+              span {
+                   font-size: 16px;
+                   color: blue;
+                   text-decoration: underline;
+                   text-decoration-color: blue;
+              }
+
+              :hover {
+                   cursor: pointer;
+              }
+         }
+         
+         .koala__container:hover {
+              cursor: pointer;
+         }
+
+         img {
+              margin-bottom: 20px;
+         }
+    }
+
+    .background__item {
+         background-color: rgb(245, 245, 245);
+         border: none;
+    }
+
+    .footer__text {
+
+         .card-footer__text {
+              font-size: 13px;
+              font-weight: lighter;
+              span {
+                   font-size: 12.5px;
+                   font-weight: bold;
+                   color: blue;
+              }
+              span:hover {
+                   cursor: pointer;
+              }
+         }
+
+    }
+
+    .icons__container {
+
+         margin-bottom: 25px;
+         background-color: rgb(245, 245, 245);
+
+         img:hover{
+              background-color: rgb(212, 229, 255);
+              color: rgb(23, 23, 204);
+              text-decoration: underline;
+              text-decoration-color: rgb(0, 0, 94);
+              cursor: pointer;    
+         }
+
+    }
+
+
+}
+
+.main-principal__container {
+    .nav-underline {
+        --bs-nav-underline-border-width: 0;
+    }
+    .tabs__container {
+        height: 60px;
+        * {
+            font-size: 1.125rem;
+        }
+        .item__tab {
+            padding: 0.25rem;
+            border-radius: 8px;
+            color: #000;
+            a {
+                &:hover{
+                    color:rgb(59, 73, 223);
+                }
+            }
+            .item__link {
+                color: #000;
+            }
+            &:hover {
+                background-color: #fff;
+            }
+        }
+    }
+    .cards__container {
+        .card {
+            padding-bottom: 10px;
+            .card-body {
+                .autor__container {    
+                    .autor__pic {
+                        border-radius: 100%;
+                        width:32px;
+                        height: 32px;
+                        right: 15px;
+                        top: 15px;
+                    }
+                    .post-img__container {
+                        .autor__pic {
+                            border-radius: 0%;
+                            width:32px;
+                            height: 32px;
+                        }
+                        .autor__pic--circle {
+                            border-radius: 100%;
+                            width:32px;
+                            height: 32px;
+                        }
+                        .autor__photo {
+                            border-radius: 100%;
+                            border-style: solid;
+                            border-color: #fff;
+                            width:24px;
+                            height: 24px;
+                            left: 35px;
+                            top: 38px;
+                        }
+                    }
+                    .autor-info__container {
+                        .autor__label {
+                            font-weight: 500;
+                            font-size:0.875rem;
+                            color: rgb(64, 64, 64);
+                            font-family: $fonts-principal;
+                            padding: 0.25rem;
+                            border-radius: 8px;
+                            &:hover {
+                                background-color: #f3f3f3;
+                            }
+                        }
+                        .date__label {
+                            font-size: 0.75rem;
+                            color: rgb( 82, 82, 82);
+                        }
+                    }
+                }
+                .card-title-lg {
+                     font-size: 1.875rem;
+                     font-weight: bold;
+                     font-family: $fonts-principal;
+                     &:hover{
+                        color:rgb(59, 73, 223);
+                     }
+                }
+                .card-subtitle-lg {
+                     font-size: 1.5rem;
+                     font-weight: bold;
+                     font-family: $fonts-principal;
+                     &:hover{
+                        color:rgb(59, 73, 223);
+                        cursor: pointer;
+                     }
+                }
+                .card-title-sm {
+                    font-size: 1.25rem;
+                     font-weight: bold;
+                     font-family: $fonts-principal;
+                     &:hover{
+                        color:rgb(59, 73, 223);
+                        cursor: pointer;
+                     }
+                }
+                .tags__container {
+                    .li__green {
+                        background-color: #1ad6431a;
+                        .green__tag {
+                            color:#1ad643;
+                        }
+                        &:hover {
+                            border-color: #1ad643;
+                            background-color: #1ad6431a;
+                        }
+                    }
+                    li {
+                        font-size: 0.875rem;
+                        padding: 0.25rem;
+                        border-radius: 8px;
+                        border: 1px solid;
+                        border-color: #fff;
+                        &:hover {
+                            background-color: #f3f3f3;
+                            border: 1px solid;
+                            border-color: #b4afaf;
+                        }
+                    }
+                }
+            }
+            .info__container {
+                .detail__container {
+                    .reactions__link {
+                        padding: 0.25rem;
+                        border-radius: 8px;
+                        .reactions-pic__container {
+                            border-radius: 100%;
+                            background-color: rgb(245, 245, 245);
+                            border: 2px solid rgb(245, 245, 245);
+                            width: 28px;
+                            height: 28px;
+                        }
+                        .reaction__pic--front {
+                            z-index: 5;                           
+                        }
+                        .reaction__pic--back {
+                            z-index: 4;      
+                            right: 10px;                            
+                        }
+                        .reaction__pic--back-2 {
+                            z-index: 3;
+                            right: 20px;
+                        }
+                        .reaction__pic--back-3 {
+                            z-index: 2;
+                            right: 30px;
+                        }
+                        .reaction__pic--back-4 {
+                            z-index: 1;
+                            right: 40px;
+                        }
+                        .reactions__label {
+                            font-size: 0.875rem;
+                        }
+                        &:hover {
+                            background-color: #f3f3f3;
+                        }
+                    }
+                    .comments__link {
+                        font-size: 0.875rem;
+                        padding: 0.25rem;
+                        border-radius: 8px;
+                        &:hover {
+                            background-color: #f3f3f3;
+                        }
+                    }
+                }
+                .time__container {
+                    .min-read__container {
+                        font-size: 0.75rem;
+                    }
+                    .bookmark__pic {
+                        padding: 0.25rem;
+                        border-radius: 5px;
+                        &:hover {
+                            background-color: rgb(59, 73, 223, 0.1);
+                        }
+                     }
+                }
+            }
+            .comments__container {
+                .comment__container {
+                    .autor-comment__pic {
+                        border-radius: 100%;
+                        width:24px;
+                        height: 24px;
+                    }
+                    .comment-detail__container {
+                         background-color: rgb(245, 245, 245);
+                        * {
+                            font-size: 0.875rem;
+                        }
+                    }
+                }
+            }
+            .all-comments__container {
+                .all-comments__text {
+                    font-size: 0.875rem;
+                }
+            }
+        }
+        .deleteButton__container{
+            flex-direction: row-reverse;
+            text-align: right;
+            
+        }        
+        #delete__button{
+            margin-top: 10px;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+} 
+
+.aside-right-principal__container {
+    .color__blue {
+        color: blue;
+        font-weight: 500;
+    }
+
+    span
+     {
+        font-weight: 500;  
+    }
+
+    p{
+        font-size: 13px;
+    }
+
+    a:hover{
+        color: blue;
+    }
+
+    .color__gold {
+        background-color: goldenrod;
+        font-size: 13px;
+    }
+
+    .margin__card {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+}
+
+
+.aside-left-post__container {
+
+    .icon__color{
+        
+        .icon-heart:hover{
+            color: red;
+        }
+        .icon-message:hover{
+            color: yellow;
+        }
+        .icon-mark:hover{
+            color: hotpink;
+        }
+
+    }
+
+    
+}
+
+.main-post__container {
+    .more__info .row:hover .fs-4,
+    .more__info .row:hover .opacity-75 {
+       color: rgb(59, 73, 223);
+       cursor: pointer;
+   }
+
+   @media (min-width: 768px) {
+    .main-post__container {
+      margin-left: 5rem;
+    }
+  }
+   }
+
+   .aside-right-post__container {
+    .card__anuncio {
+            position: sticky;
+            top: 20px; 
+            z-index: 100; 
+            
+    }
+   
+    @media (max-width: 769px) {
+        .aside-right-post__container {
+          margin-left: 0rem;
+        }
+      }
+      @media (max-width: 768px) {
+        .aside-right-post__container {
+          margin-left: 5rem;
+        }
+      }
+      @media (max-width: 320px) {
+        .aside-right-post__container {
+          margin-left: 0rem;
+        }
+      }
+    
+    
+}
+.footer__container {
+    .no__point {
+            list-style:none;
+         } 
+    
+         span, li{
+          color: blue;  
+          
+         }
+}
+
+
+.button-edit-color{
+    background-color: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.1);
+    border-radius: 0.375rem;
+    padding: 12px 15px;
+    font-size: 12px;
+
+    // position: absolute;
+    // top: 380px;
+    // right: 40px;
+}
+
+
+.button-edit-color:hover{
+    background-color: rgba(244, 50, 6, 0.1);
+}
+
