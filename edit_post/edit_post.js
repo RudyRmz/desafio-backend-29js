@@ -1,4 +1,4 @@
-const URL_FIREBASE= "https://javascript29js-default-rtdb.firebaseio.com/devto"
+const URL_MONGODB= "http://localhost:3002/posts/"
 
 let queryString = location.search
 console.log(queryString)
@@ -20,12 +20,12 @@ iconButton.addEventListener("click", ()=>{
 
 
 const getPostById = async (idPost) =>{
-    let reponse = await fetch(`${URL_FIREBASE}/${idPost}/.json`)
+    let reponse = await fetch(`${URL_MONGODB}/${idPost}/`)
     let data = await reponse.json();
     // console.log(data)
     // return(data)
     if(data){
-        let {date, description, tags, title, url, reactions, key} = data
+        let {date, description, tags, title, url, reactions, key} = data.data
         input_url.value = url
         input_tittle.value = title
         input_post.textContent = description
@@ -42,9 +42,11 @@ const patchPost = async () => {
         //tags: [],
         description: input_post.value,
     }
-    let response = await fetch(`${URL_FIREBASE}/${postId}/.json`,
+    console.log(postInfo)
+    let response = await fetch(`${URL_MONGODB}/${postId}/`,
         {
-        method: "PATCH",
+        method: "PUT",
+        headers: { 'Content-type' : 'application/json;charset=UTF-8'},
         body: JSON.stringify(postInfo),
         }
     );
@@ -67,7 +69,7 @@ const patchPost = async () => {
 //         description: input_post,
 //     };
 
-//     const url = URL_FIREBASE + ID_POST + '.json';
+//     const url = URL_MONGODB + ID_POST + '.json';
 //     const response = await fetch(url, {
 //         method: 'PATCH',
 //         body: JSON.stringify(post)
@@ -109,7 +111,7 @@ const patchPost = async () => {
 
 
 
-// const URL_FIREBASE ="https://javascript29js-default-rtdb.firebaseio.com/devto"
+// const URL_MONGODB ="https://javascript29js-default-rtdb.firebaseio.com/devto"
 
 // const search = location.search;
 // const url = new URLSearchParams(search);
@@ -128,7 +130,7 @@ const patchPost = async () => {
 //         description: input_post,
 //     };
 
-//     const url = URL_FIREBASE + ID_POST + '.json';
+//     const url = URL_MONGODB + ID_POST + '.json';
 //     const response = await fetch(url, {
 //         method: 'PATCH',
 //         body: JSON.stringify(post)
@@ -145,7 +147,7 @@ const patchPost = async () => {
 
 
 // const getPostByID = async() => {
-//     const url = URL_FIREBASE + ID_POST + '.json';
+//     const url = URL_MONGODB + ID_POST + '.json';
 //     const info = await fetch(url);
 //     const parsed = await info.json();
 //     console.log(parsed)
