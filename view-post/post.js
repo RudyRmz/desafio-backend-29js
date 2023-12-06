@@ -53,7 +53,7 @@ const getPostById = async (idPost) =>{
 
     const deleteUser = async (userId) => {
         let response = await fetch(
-        `${URL_MONGODB}/${userId}/.json`,
+        `${URL_MONGODB}/${userId}/`,
         {
             method: "DELETE",
         }
