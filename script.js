@@ -1,6 +1,7 @@
 let postsEntries =  [];
 
-const URL_FIREBASE= "https://javascript29js-default-rtdb.firebaseio.com/devto/.json"
+//const URL_FIREBASE= "https://javascript29js-default-rtdb.firebaseio.com/devto/.json"
+const URL_FIREBASE= "http://localhost:3002/posts/"
 
 let sectionCards =  document.getElementById("section_cards")
 
@@ -12,10 +13,10 @@ createPostButton.addEventListener("click",()=>{
 const getAllPosts = async ()=>{
     let reponse  = await fetch(URL_FIREBASE)
     let data = await reponse.json()
-    let transformedData =  Object.entries(data).reduce((accum, current)=>{
-      return [...accum, {key: current[0], ...current[1]}]
-    }, [])
-    postsEntries = transformedData;
+    // let transformedData =  Object.entries(data).reduce((accum, current)=>{
+    //   return [...accum, {key: current[0], ...current[1]}]
+    // }, [])
+    postsEntries = data.data;
     if (postsEntries){
       printPosts(postsEntries)
     }
