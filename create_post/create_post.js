@@ -89,19 +89,30 @@ const postInfo = {
 
 const fechaActual = new Date();
 const tiempoEnMilisegundos = fechaActual.getTime();
-console.log(tiempoEnMilisegundos);
+//console.log(tiempoEnMilisegundos);
 
 let randomNumber = Math.floor(Math.random()*50)
 
+const URL_MONGODB= "http://localhost:3002/posts"
+
 const postSave = async(postInfo) =>{
-    const response = await fetch(URL_FIREBASE, {
+    console.log(JSON.stringify(postInfo));
+    const response = await fetch(URL_MONGODB, {
         method: 'POST',
-        // headers: { 'Content-type' : 'application/json;charset=UTF-8'},
+        headers: { 'Content-type' : 'application/json;charset=UTF-8'},
         body: JSON.stringify(postInfo), 
     });
-    let data = await response.json()
-    console.log(response)
-    return data
+    //console.log(response.body)
+    // let data = await response.json()
+    // console.log(response)
+    // return data
+    if (!response.ok) {
+        throw new Error(`No se pudo guardar el post. Estado: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log(data);
+    return data;
 };
 
 
@@ -131,7 +142,7 @@ saveInfo.addEventListener('click', async function () {
         postInfo.dateMiliseconds = tiempoEnMilisegundos
         postInfo.reactions = randomNumber
         //console.log(newTitle);
-        postSave(postInfo);
+        await postSave(postInfo);
         imageUrl.value = ""
         postTitle.value = ""
         description.value = ""
@@ -146,7 +157,7 @@ saveInfo.addEventListener('click', async function () {
     }
 });
 
-const URL_FIREBASE= "https://javascript29js-default-rtdb.firebaseio.com/devto/.json"
+
 
 
 
