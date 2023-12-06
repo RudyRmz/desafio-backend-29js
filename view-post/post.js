@@ -1,5 +1,6 @@
 
-const URL_FIREBASE= "https://javascript29js-default-rtdb.firebaseio.com/devto"
+//const URL_MONGODB= "https://javascript29js-default-rtdb.firebaseio.com/devto"
+const URL_MONGODB= "http://localhost:3002/posts/"
 
 let queryString = location.search
 console.log(queryString)
@@ -12,13 +13,13 @@ console.log(postId)
 
 
 const getPostById = async (idPost) =>{
-    let reponse = await fetch(`${URL_FIREBASE}/${idPost}/.json`)
+    let reponse = await fetch(`${URL_MONGODB}/${idPost}/`)
     let data = await reponse.json();
     console.log(data)
-    // let {date, description, tags, title, url, reactions, key} = data;
+    // let {date, description, tags, title, url, reactions, _id} = data;
 
     if (data){
-        let {date, description, tags, title, url, reactions, key} = data;
+        let {date, description, tags, title, url, reactions, _id} = data.data;
         document.getElementById("head-title").textContent = title;
         document.getElementById("post-cover").src = url
         document.getElementById("date-post").textContent = `Posted on ${date}`
@@ -52,7 +53,7 @@ const getPostById = async (idPost) =>{
 
     const deleteUser = async (userId) => {
         let response = await fetch(
-        `${URL_FIREBASE}/${userId}/.json`,
+        `${URL_MONGODB}/${userId}/.json`,
         {
             method: "DELETE",
         }
@@ -140,12 +141,12 @@ document.getElementById("signOutButton").addEventListener("click", ()=>{
   
 validTokenUser()
 
-// const URL_FIREBASE= "https://javascript29js-default-rtdb.firebaseio.com/devto/.json"
+// const URL_MONGODB= "https://javascript29js-default-rtdb.firebaseio.com/devto/.json"
 
 // let sectionCards =  document.getElementById("section_cards")
 
 // const getAllPosts = async ()=>{
-//     let reponse  =  fetch(URL_FIREBASE)
+//     let reponse  =  fetch(URL_MONGODB)
 //     let data = await reponse.json()
 //     console.log(data)
 //     return data
@@ -226,8 +227,8 @@ validTokenUser()
 
 // // Traer informacion de ese hash
 // const getInfoById = async () => {
-//     //const url = URL_FIREBASE + ID_POST + '.json'
-//     const url = URL_FIREBASE + '-NeugAeo2dr-wmPly7s0' + '.json'
+//     //const url = URL_MONGODB + ID_POST + '.json'
+//     const url = URL_MONGODB + '-NeugAeo2dr-wmPly7s0' + '.json'
 //     console.log(url);
 //     const info = await fetch(url)
 //     console.log(info);

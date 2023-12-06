@@ -1,7 +1,7 @@
 let postsEntries =  [];
 
-//const URL_FIREBASE= "https://javascript29js-default-rtdb.firebaseio.com/devto/.json"
-const URL_FIREBASE= "http://localhost:3002/posts/"
+//const URL_MONGODB= "https://javascript29js-default-rtdb.firebaseio.com/devto/.json"
+const URL_MONGODB= "http://localhost:3002/posts/"
 
 let sectionCards =  document.getElementById("section_cards")
 
@@ -11,7 +11,7 @@ createPostButton.addEventListener("click",()=>{
 })
 
 const getAllPosts = async ()=>{
-    let reponse  = await fetch(URL_FIREBASE)
+    let reponse  = await fetch(URL_MONGODB)
     let data = await reponse.json()
     // let transformedData =  Object.entries(data).reduce((accum, current)=>{
     //   return [...accum, {key: current[0], ...current[1]}]
@@ -79,14 +79,14 @@ const logout = () => {
 };
 
 const createPost = (postData)=>{
-  let {date, description, tags, title, url, reactions, key} = postData
+  let {date, description, tags, title, url, reactions, _id} = postData
 
   let post_container = document.createElement("div")
   post_container.classList.add("card", "mb-3")
   post_container.setAttribute("id", "post_container")
 
   post_container.addEventListener("click", () => {
-    window.open(`/view-post/post.html?postId=${key}`, "_self");
+    window.open(`/view-post/post.html?postId=${_id}`, "_self");
   });
 
   let post_image =  document.createElement("img")
@@ -324,7 +324,7 @@ topButton.addEventListener("click", ()=>{
   printPosts(postTop);
 })
 
-// const URL_FIREBASE =
+// const URL_MONGODB =
 //   "https://devs-imparables-default-rtdb.firebaseio.com/.json";
 
 // const renderPost = (post, index) => {
@@ -541,7 +541,7 @@ topButton.addEventListener("click", ()=>{
 
 // const getInfoApi = async () => {
 //   try {
-//     const response = await fetch(URL_FIREBASE, {
+//     const response = await fetch(URL_MONGODB, {
 //       method: "GET",
 //     });
 //     const parsed = await response.json();
