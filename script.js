@@ -1,7 +1,9 @@
 let postsEntries =  [];
 
 //const URL_MONGODB= "https://javascript29js-default-rtdb.firebaseio.com/devto/.json"
-const URL_MONGODB= "http://localhost:3002/posts/"
+const URL_MONGODB= "http://localhost:3002/posts/" 
+//const URL_MONGODB= "http://mongodb+srv://rudyramirezmorales:HGIc2IYs5VpStd0u@cluster0.ucuh1da.mongodb.net/devto"
+
 
 let sectionCards =  document.getElementById("section_cards")
 
