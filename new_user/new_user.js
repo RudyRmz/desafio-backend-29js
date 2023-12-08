@@ -5,6 +5,7 @@ iconButtonLogin.addEventListener("click", ()=>{
     window.open("/index.html", "_self")
 })
 
+let userImage = ""
 let nameUser = ""
 let userName = ""
 let userEmail =  ""
@@ -12,14 +13,14 @@ let userPassword = ""
 let passwordConfirm = ""
 
 validarFormulario = () =>{
-
+    let userImage = document.getElementById("profile_image")
     let nameUser = document.getElementById("Name").value
     let userName = document.getElementById("userName").value
     let userEmail =  document.getElementById("userEmail").value
     let userPassword = document.getElementById("userPassword").value
     let passwordConfirm = document.getElementById("passwordConfirm").value
 
-    if (nameUser === "" || userName === "" || userEmail === "" || userPassword === "" || passwordConfirm === "") {
+    if (nameUser === "" || userName === "" || userEmail === "" || userPassword === "" || passwordConfirm === "" || userImage === "") {
         alert("Por favor, complete todos los campos.");
         return false; // Evita que el formulario se envíe
     }else if (userPassword != passwordConfirm){
@@ -55,6 +56,7 @@ const postUser = async(postUser) =>{
 const signUp = async () => {
     validarFormulario()
 
+    let userImage = document.getElementById("profile_image")
     let nameUser = document.getElementById("Name").value
     let userName = document.getElementById("userName").value
     let userEmail =  document.getElementById("userEmail").value
@@ -62,7 +64,7 @@ const signUp = async () => {
     let passwordConfirm = document.getElementById("passwordConfirm").value
 
     let userObject = {
-        avatar: "https://randomuser.me/api/portraits/women/47.jpg",
+        avatar: userImage,
         name: nameUser,
         user_name: userName,
         email: userEmail,
