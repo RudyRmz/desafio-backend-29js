@@ -76,6 +76,8 @@ const signUp = async () => {
 document.getElementById("signUp_button").addEventListener("click", ()=>{
     //alert("distee click a login")
     signUp()
+    window.open("/login/login.html", "_self")
+    alert("User created succesfully")
 })
 
 
