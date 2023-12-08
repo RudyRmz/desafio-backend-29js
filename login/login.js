@@ -64,7 +64,7 @@ const validUser = (usersData, email)=>{
     return result
 }
 
-const login = (usersData) => {
+const login = async (usersData) => {
     let userEmail =  document.getElementById("userEmail").value
     let userPassword = document.getElementById("userPassword").value
     let userLog = validUser(usersData, `${userEmail}`)
@@ -93,9 +93,10 @@ const login = (usersData) => {
         return false;
     } else if (userLog && userPassword == userLog[0].password){
             let token = getUserToken(userInfo)
-            console.log(userInfo)
-            localStorage.setItem("token", token.token);
-            //window.open("/index.html", "_self")
+            let tokenUser = await token
+            console.log(tokenUser)
+            localStorage.setItem("token", tokenUser.token);
+            window.open("/index.html", "_self")
     } else {
         alert("Invalid email or password, try again.")
         location.reload();
