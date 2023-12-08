@@ -1,4 +1,4 @@
-const URL_FIREBASE_USERS= "https://javascript29js-default-rtdb.firebaseio.com/users"
+const URL_MONGO_USERS= "http://localhost:3002/users/"
 
 const iconButtonLogin = document.getElementById("icon-index")
 iconButtonLogin.addEventListener("click", ()=>{
@@ -31,8 +31,28 @@ validarFormulario = () =>{
     return true;
 }
 
+const postUser = async(postUser) =>{
+    //console.log(JSON.stringify(postInfo));
+    const response = await fetch(URL_MONGO_USERS, {
+        method: 'POST',
+        headers: { 'Content-type' : 'application/json;charset=UTF-8'},
+        body: JSON.stringify(postUser), 
+    });
+    //console.log(response.body)
+    // let data = await response.json()
+    // console.log(response)
+    // return data
+    if (!response.ok) {
+        throw new Error(`No se pudo guardar el usuario. Estado: ${response.status}`);
+    }
 
-const signUp = () => {
+    const data = await response.json();
+    console.log(data);
+    return data;
+};
+
+
+const signUp = async () => {
     validarFormulario()
 
     let nameUser = document.getElementById("Name").value
@@ -41,7 +61,15 @@ const signUp = () => {
     let userPassword = document.getElementById("userPassword").value
     let passwordConfirm = document.getElementById("passwordConfirm").value
 
+    let userObject = {
+        avatar: "https://randomuser.me/api/portraits/women/47.jpg",
+        name: nameUser,
+        user_name: userName,
+        email: userEmail,
+        password: userPassword
+    }
 
+    await postUser(userObject)
 };
 
 
