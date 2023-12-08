@@ -28,7 +28,7 @@ const getUserId = async () =>{
     // console.log(userLog)
     //console.log(userLog[0].password)
     document.getElementById("login_button").addEventListener("click", ()=>{
-        alert("distee click a login")
+        //alert("distee click a login")
         login(usersData)
     })
 }

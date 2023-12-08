@@ -329,7 +329,7 @@ topButton.addEventListener("click", ()=>{
 
 
 // Obtener el token de alguna fuente (por ejemplo, localStorage)
-const token = localStorage.getItem("jwtToken");
+const token = localStorage.getItem("token");
 
 // Dividir el token en sus partes: encabezado, payload, firma
 const [encodedHeader, encodedPayload, encodedSignature] = token.split('.');
@@ -342,6 +342,15 @@ const payloadObject = JSON.parse(decodedPayload);
 
 // Acceder a los datos en el payload
 console.log(payloadObject);
+
+const userImage = document.getElementById("userImage")
+userImage.setAttribute("src", payloadObject.avatar)
+
+const userName =  document.getElementById("userName")
+userName.textContent = payloadObject.user_name
+
+
+
 
 
 // const URL_MONGODB =
