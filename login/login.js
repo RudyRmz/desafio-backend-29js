@@ -1,5 +1,6 @@
 //const URL_MONGODB= "https://javascript29js-default-rtdb.firebaseio.com/users"
 const URL_MONGODB= "http://localhost:3002/users/" 
+const URL_USERSLOGIN = "http://localhost:3002/auth//login/"
 
 
 const iconButtonLogin = document.getElementById("icon-index")
@@ -27,12 +28,34 @@ const getUserId = async () =>{
     // console.log(userLog)
     //console.log(userLog[0].password)
     document.getElementById("login_button").addEventListener("click", ()=>{
-        //alert("distee click a login")
+        alert("distee click a login")
         login(usersData)
     })
 }
 
 getUserId()
+
+const getUserToken = async(userInfo) =>{
+    //console.log(JSON.stringify(userInfo));
+    const response = await fetch(URL_USERSLOGIN, {
+        method: 'POST',
+        headers: { 'Content-type' : 'application/json;charset=UTF-8'},
+        body: JSON.stringify(userInfo), 
+    });
+    //console.log(response.body)
+    // let data = await response.json()
+    // console.log(response)
+    // return data
+    if (!response.ok) {
+        throw new Error(`No se pudo generar el token. Estado: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log(data);
+    return data;
+};
+
+
 
 const validUser = (usersData, email)=>{
     let result = (usersData.filter((user)=>{
@@ -45,6 +68,11 @@ const login = (usersData) => {
     let userEmail =  document.getElementById("userEmail").value
     let userPassword = document.getElementById("userPassword").value
     let userLog = validUser(usersData, `${userEmail}`)
+    console.log(userLog)
+    let userInfo = {
+        email: userLog[0].email ,
+        password: userLog[0].password ,
+    }
     // if (userEmail === "" || userPassword === "") {
     //     alert("Please complete all fields.");
     //     return false; // Evita que el formulario se envíe
@@ -64,8 +92,10 @@ const login = (usersData) => {
         location.reload();
         return false;
     } else if (userLog && userPassword == userLog[0].password){
-            localStorage.setItem("token", userLog[0].user_name);
-            window.open("/index.html", "_self")
+            let token = getUserToken(userInfo)
+            console.log(userInfo)
+            localStorage.setItem("token", token.token);
+            //window.open("/index.html", "_self")
     } else {
         alert("Invalid email or password, try again.")
         location.reload();

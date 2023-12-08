@@ -326,6 +326,24 @@ topButton.addEventListener("click", ()=>{
   printPosts(postTop);
 })
 
+
+
+// Obtener el token de alguna fuente (por ejemplo, localStorage)
+const token = localStorage.getItem("jwtToken");
+
+// Dividir el token en sus partes: encabezado, payload, firma
+const [encodedHeader, encodedPayload, encodedSignature] = token.split('.');
+
+// Decodificar el payload (parte central) del token
+const decodedPayload = atob(encodedPayload);
+
+// Parsear el JSON del payload decodificado
+const payloadObject = JSON.parse(decodedPayload);
+
+// Acceder a los datos en el payload
+console.log(payloadObject);
+
+
 // const URL_MONGODB =
 //   "https://devs-imparables-default-rtdb.firebaseio.com/.json";
 
