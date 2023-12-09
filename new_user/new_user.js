@@ -56,7 +56,7 @@ const postUser = async(postUser) =>{
 const signUp = async () => {
     validarFormulario()
 
-    let userImage = document.getElementById("profile_image")
+    let userImage = document.getElementById("profile_image").value
     let nameUser = document.getElementById("Name").value
     let userName = document.getElementById("userName").value
     let userEmail =  document.getElementById("userEmail").value
